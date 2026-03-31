@@ -40,7 +40,7 @@ const intuitionClnOnboard = [
   },
   {
     id: 4,
-    title: 'Unlock new Labuda skins',
+    title: 'Open new Labuda skins',
     btnLabel: 'Start',
     description:
       'Go through the categories and open new Labuda skins. Each skin is a new stage of your journey.',
