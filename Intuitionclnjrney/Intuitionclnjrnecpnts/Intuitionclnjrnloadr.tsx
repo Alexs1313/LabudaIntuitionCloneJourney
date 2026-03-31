@@ -20,86 +20,115 @@ const intuitionClnLoaderHTML = `
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  html, body {
+  body {
     margin: 0;
     padding: 0;
     background: transparent;
-    overflow: hidden;
-    height: 100%;
-  }
-
-  body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
   }
 
-  .spinner {
-    width: 70px;
-    height: 70px;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loader {
     position: relative;
-    transform-style: preserve-3d;
-    animation: spinner 1.6s infinite ease;
+    width: 200px;
+    height: 200px;
+    perspective: 800px;
   }
 
-  .spinner div {
+  .crystal {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid #ffffff;
-    background: rgba(247,197,159,0.1);
-  }
-
-  .spinner div:nth-child(1) {
-    transform: translateZ(-35px) rotateY(180deg);
-  }
-
-  .spinner div:nth-child(2) {
-    transform: rotateY(-270deg) translateX(50%);
-    transform-origin: top right;
-  }
-
-  .spinner div:nth-child(3) {
-    transform: rotateY(270deg) translateX(-50%);
-    transform-origin: center left;
-  }
-
-  .spinner div:nth-child(4) {
-    transform: rotateX(90deg) translateY(-50%);
-    transform-origin: top center;
-  }
-
-  .spinner div:nth-child(5) {
-    transform: rotateX(-90deg) translateY(50%);
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
     transform-origin: bottom center;
+    transform: translate(-50%, -50%) rotateX(45deg) rotateZ(0deg);
+    animation: spin 4s linear infinite,
+               emerge 2s ease-in-out infinite alternate,
+               fadeIn 0.3s ease-out forwards;
+    border-radius: 10px;
+    visibility: hidden;
   }
 
-  .spinner div:nth-child(6) {
-    transform: translateZ(35px);
+  @keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotateX(45deg) rotateZ(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotateX(45deg) rotateZ(360deg);
+    }
   }
 
-  @keyframes spinner {
-    0% {
-      transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  @keyframes emerge {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
     }
     50% {
-      transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
     }
-    100% {
-      transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+
+  @keyframes fadeIn {
+    to {
+      visibility: visible;
+      opacity: 0.8;
     }
+  }
+
+  .crystal:nth-child(1) {
+    background: linear-gradient(45deg, #003366, #336699);
+    animation-delay: 0s;
+  }
+
+  .crystal:nth-child(2) {
+    background: linear-gradient(45deg, #003399, #3366cc);
+    animation-delay: 0.3s;
+  }
+
+  .crystal:nth-child(3) {
+    background: linear-gradient(45deg, #0066cc, #3399ff);
+    animation-delay: 0.6s;
+  }
+
+  .crystal:nth-child(4) {
+    background: linear-gradient(45deg, #0099ff, #66ccff);
+    animation-delay: 0.9s;
+  }
+
+  .crystal:nth-child(5) {
+    background: linear-gradient(45deg, #33ccff, #99ccff);
+    animation-delay: 1.2s;
+  }
+
+  .crystal:nth-child(6) {
+    background: linear-gradient(45deg, #66ffff, #ccffff);
+    animation-delay: 1.5s;
   }
 </style>
 </head>
 
 <body>
-  <div class="spinner">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="container">
+    <div class="loader">
+      <div class="crystal"></div>
+      <div class="crystal"></div>
+      <div class="crystal"></div>
+      <div class="crystal"></div>
+      <div class="crystal"></div>
+      <div class="crystal"></div>
+    </div>
   </div>
 </body>
 </html>

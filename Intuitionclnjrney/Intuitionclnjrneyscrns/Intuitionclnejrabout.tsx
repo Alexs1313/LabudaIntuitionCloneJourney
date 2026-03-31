@@ -43,10 +43,13 @@ const Intuitionclnejrabout = () => {
   const intjorneyShareApp = async () => {
     try {
       await Share.share({
-        message: 'Labuda Intuition Clone Journey',
+        message: `An interactive experience designed to develop attention, perception, and intuitive thinking. Each level challenges your ability to recognize subtle differences and trust your inner sense. With each correct choice, your focus
+becomes sharper and your reactions more confident. The app helps improve observation skills, concentration, and
+decision-making speed in a calm and engaging environment. All progress is stored locally on your device. No personal data is
+collected or shared. Trust your intuition. Improve your perception. Continue forward.`,
       });
     } catch {
-      // ignore
+      console.log('error!');
     }
   };
 
@@ -80,8 +83,8 @@ const Intuitionclnejrabout = () => {
             </View>
 
             <Text style={styles.intjorneycontenttext}>
-              Labuda Intuition Clone Journey is an interactive experience
-              designed to develop attention, perception, and intuitive thinking.
+              An interactive experience designed to develop attention,
+              perception, and intuitive thinking.
             </Text>
             <Text style={styles.intjorneycontenttext}>
               Each level challenges your ability to recognize subtle differences

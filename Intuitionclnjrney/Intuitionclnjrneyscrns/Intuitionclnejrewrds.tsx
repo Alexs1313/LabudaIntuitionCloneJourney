@@ -67,11 +67,11 @@ const intuitionClnRewardsData = [
     id: 4,
     title: 'True Perception',
     description:
-      'You try to trust your own intuition without doubt. The true Labuda can no longer hide.',
+      'You try to trust your own intuition without doubt. The true Laby can no longer hide.',
   },
   {
     id: 5,
-    title: 'Labuda Master',
+    title: 'Laby Master',
     description:
       'Your intuition has reached the highest level. You see the truth instantly.',
   },

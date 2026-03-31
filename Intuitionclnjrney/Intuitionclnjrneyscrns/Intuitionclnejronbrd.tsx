@@ -40,10 +40,10 @@ const intuitionClnOnboard = [
   },
   {
     id: 4,
-    title: 'Unlock new Labuda skins',
+    title: 'Open new Laby skins',
     btnLabel: 'Start',
     description:
-      'Go through the categories and open new Labuda skins. Each skin is a new stage of your journey.',
+      'Go through the categories and open new Laby skins. Each skin is a new stage of your journey.',
     image: require('../../assets/i/intuitionclwel4.png'),
   },
 ];
