@@ -113,7 +113,7 @@ const Intuitionclneexchng = () => {
         message: intjorneycurrentsignal,
       });
     } catch {
-      // ignore
+      console.log('error!');
     }
   };
 
