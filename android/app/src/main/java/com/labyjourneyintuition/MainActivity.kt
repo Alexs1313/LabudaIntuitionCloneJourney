@@ -1,4 +1,4 @@
-package com.labudaintuitionclonejourney
+package com.labyjourneyintuition
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
